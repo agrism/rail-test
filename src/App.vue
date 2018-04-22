@@ -116,6 +116,7 @@
 					});
 			},
 			uploadNewDocument() {
+				this.loading = true;
 				let formData = new FormData();
 
 				formData.append('file', this.newDocument);
@@ -124,9 +125,11 @@
 				)
 					.then((response) => {
 						this.getData()
+						this.loading = false;
 					})
 					.catch(function (error) {
 						console.log(error);
+						this.loading = false;
 					});
 			},
 			openDocumentInput() {
@@ -214,7 +217,9 @@
         -webkit-animation: spin 2s linear infinite; /* Safari */
         animation: spin 2s linear infinite;
         left: 50%;
-        position: relative;
+        top: 50%;
+        position: fixed;
+        z-index: 99999;
     }
 
     /* Safari */
