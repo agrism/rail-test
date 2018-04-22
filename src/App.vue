@@ -52,7 +52,8 @@
 	import axios from 'axios'
 
 	const axiosInstance = axios.create({
-		baseURL: 'http://rail-test-api.localhost/api/v1/',
+		// baseURL: 'http://rail-test-api.localhost/api/v1/',
+		baseURL: 'http://api.12a.lv/api/v1/',
 		timeout: 10000,
 	});
 
